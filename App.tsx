@@ -1,12 +1,12 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import LoginScreen from './src/features/authenticate/LoginScreen';
+import Root from './src/navigation/screens/Root';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <LoginScreen />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Root />
+    </NavigationContainer>
   );
 }
 export default App;
