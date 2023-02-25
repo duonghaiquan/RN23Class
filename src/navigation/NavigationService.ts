@@ -4,7 +4,7 @@ import {
   StackActions,
 } from '@react-navigation/native';
 import {APP_ROUTE} from './config/routes';
-import {RootStackParamList} from './screens/Root';
+import {RootStackParamList} from './sence/RootScenes';
 
 export const navigationRef = createNavigationContainerRef<RootStackParamList>();
 

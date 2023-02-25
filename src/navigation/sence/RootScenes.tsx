@@ -1,16 +1,21 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import HomeScreen from '../../features/home/HomeScreen';
+import navigationConfigs from '../config/options';
+import {APP_ROUTE} from '../config/routes';
+import MainTabContainer from './TabScenes';
 
 export type RootStackParamList = Record<string, any>;
 
-const MainStack = createNativeStackNavigator();
+const MainStack = createNativeStackNavigator<RootStackParamList>();
 
 const AppStack = () => {
   return (
-    <MainStack.Navigator>
-      <MainStack.Screen name="HomeScreen" component={HomeScreen} />
+    <MainStack.Navigator screenOptions={navigationConfigs}>
+      <MainStack.Screen
+        name={APP_ROUTE.MAIN_TAB}
+        component={MainTabContainer}
+      />
     </MainStack.Navigator>
   );
 };

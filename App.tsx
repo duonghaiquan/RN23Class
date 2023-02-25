@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import Root from './src/navigation/screens/Root';
+import Root from './src/navigation/sence/RootScenes';
 
 function App(): JSX.Element {
   return (

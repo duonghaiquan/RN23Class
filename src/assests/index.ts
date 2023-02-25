@@ -7,6 +7,10 @@ const Images = {
     photos: {
       logo: require('./icons/user.png'),
     },
+    tab: {
+      home: require('./icons/user.png'),
+      setting: require('./icons/lock.png'),
+    },
   },
 };
 

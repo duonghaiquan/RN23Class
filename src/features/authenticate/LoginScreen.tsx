@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Images from '../../assests';
@@ -8,6 +9,11 @@ import StyledInput from '../../components/common/StyledInput';
 
 const LoginScreen = () => {
   const [formData, setFormData] = useState(false);
+  const {navigate} = useNavigation();
+
+  const goToHome = () => {
+    navigate('HomeScreen', {userName: 'DuONG HAI QUAN'});
+  };
 
   const onCheckRemember = (v: boolean) => {
     setFormData(v);
@@ -20,7 +26,7 @@ const LoginScreen = () => {
         <Text style={styles.welcomeText}>Welcome back!</Text>
         <Text style={styles.descriptionText}>Login to your account</Text>
       </View>
-      {/* <View style={{flex: 1, backgroundColor: 'white', paddingHorizontal: 40}}>
+      <View style={{flex: 1, backgroundColor: 'white', paddingHorizontal: 40}}>
         <StyledInput
           label="Username"
           placeholderText="Enter your username"
@@ -33,7 +39,7 @@ const LoginScreen = () => {
           customStyle={styles.input}
           leftIcon={Images.icons.loginScreen.password}
         />
-        <TouchableOpacity style={styles.buttonSignIn}>
+        <TouchableOpacity onPress={goToHome} style={styles.buttonSignIn}>
           <Text>Sign in</Text>
         </TouchableOpacity>
       </View>
@@ -41,12 +47,12 @@ const LoginScreen = () => {
         <SocialLogin />
         <SocialLogin />
         <SocialLogin />
-      </View> */}
+      </View>
       {/* <StyledCheckBox color={'green'} onCheck={onCheckRemember} /> */}
-      <StyledRadioButton />
+      {/* <StyledRadioButton /> */}
       <View style={styles.bottom}>
         <Text>Don't have an account? </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={goToHome}>
           <Text style={styles.signUpText}>Sign up here</Text>
         </TouchableOpacity>
       </View>
