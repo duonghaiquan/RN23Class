@@ -3,13 +3,12 @@ import React, {useState} from 'react';
 
 interface Props {
   color?: string;
-  isChecked?: string;
   id: string;
   selectedItem?: string;
   onCheck(id: string, isChecked: boolean): void;
 }
 
-const StyledCheckBox = (props: Props) => {
+const ItemRadioButton = (props: Props) => {
   const {color = 'gray'} = props;
   const [checked, setChecked] = useState(false);
 
@@ -24,15 +23,15 @@ const StyledCheckBox = (props: Props) => {
         onPress={() => toggleCheckBox(!checked)}
         style={[
           styles.square,
-          {backgroundColor: props.isChecked ? color : 'white'},
+          {backgroundColor: props.selectedItem === props.id ? color : 'white'},
         ]}
       />
-      <Text>Remember login</Text>
+      <Text>{props.id}</Text>
     </View>
   );
 };
 
-export default StyledCheckBox;
+export default ItemRadioButton;
 
 const styles = StyleSheet.create({
   container: {

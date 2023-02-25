@@ -30,7 +30,6 @@ const StyledTabBar = ({state, descriptors, navigation}: any) => {
             target: route.key,
           });
         };
-
         return (
           <StyledTouchable
             accessibilityRole="button"
@@ -46,11 +45,9 @@ const StyledTabBar = ({state, descriptors, navigation}: any) => {
               source={options?.icon}
               style={[
                 styles.tabIcon,
-                // {
-                //   tintColor: isFocused
-                //     ? Themes.COLORS.primary
-                //     : Themes.COLORS.black,
-                // },
+                {
+                  tintColor: isFocused ? 'red' : 'black',
+                },
               ]}
             />
           </StyledTouchable>

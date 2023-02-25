@@ -1,14 +1,21 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import RegisterScreen from '../../features/authenticate/RegisterScreen';
+import navigationConfigs from '../config/options';
+import {AUTHENTICATE_ROUTE} from '../config/routes';
+import {RootStackParamList} from './RootScenes';
 
-const Auth = () => {
+const MainStack = createStackNavigator<RootStackParamList>();
+
+const AuthStack = () => {
   return (
-    <View>
-      <Text>Auth</Text>
-    </View>
+    <MainStack.Navigator screenOptions={navigationConfigs}>
+      <MainStack.Screen
+        name={AUTHENTICATE_ROUTE.REGISTER}
+        component={RegisterScreen}
+      />
+    </MainStack.Navigator>
   );
 };
 
-export default Auth;
-
-const styles = StyleSheet.create({});
+export default AuthStack;

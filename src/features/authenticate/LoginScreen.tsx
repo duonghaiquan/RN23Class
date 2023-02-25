@@ -1,18 +1,18 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Images from '../../assests';
-import StyledCheckBox from '../../components/base/StyledCheckBox';
-import StyledRadioButton from '../../components/base/StyledRadioButton';
 import SocialLogin from '../../components/common/SocialLogin';
 import StyledInput from '../../components/common/StyledInput';
+import {TAB_NAVIGATION_ROOT} from '../../navigation/config/routes';
+import {navigate} from '../../navigation/NavigationService';
 
 const LoginScreen = () => {
   const [formData, setFormData] = useState(false);
-  const {navigate} = useNavigation();
 
   const goToHome = () => {
-    navigate('HomeScreen', {userName: 'DuONG HAI QUAN'});
+    navigate(TAB_NAVIGATION_ROOT.HOME_ROUTE.HOME_SCREEN, {
+      userName: 'DuONG HAI QUAN',
+    });
   };
 
   const onCheckRemember = (v: boolean) => {

@@ -6,16 +6,17 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TextInputProps,
   TextStyle,
   View,
 } from 'react-native';
 
-interface Props {
+interface Props extends TextInputProps {
   placeholderText?: string;
   customStyle?: StyleProp<TextStyle>;
   label: string;
   count?: number;
-  leftIcon: ImageSourcePropType;
+  leftIcon?: ImageSourcePropType;
 }
 
 const StyledInput = (props: Props) => {
@@ -37,6 +38,7 @@ const StyledInput = (props: Props) => {
         <TextInput
           style={[styles.textInput, props.customStyle]}
           placeholder={props.placeholderText}
+          {...props}
         />
       </View>
     </View>

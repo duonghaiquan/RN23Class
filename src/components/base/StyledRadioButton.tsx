@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import StyledCheckBox from './StyledCheckBox';
+import ItemRadioButton from './ItemRadioButton';
 
 const StyledRadioButton = (props: any) => {
   const [group, setGroup] = useState(['Quyet', 'Thanh', 'Hung', 'Cuong']);
@@ -14,23 +15,13 @@ const StyledRadioButton = (props: any) => {
 
   return (
     <View style={{marginTop: 10}}>
-      <StyledCheckBox
+      <ItemRadioButton
         id={'Quyet'}
         selectedItem={selectedItem}
         onCheck={handleSelect}
       />
-      <StyledCheckBox
+      <ItemRadioButton
         id={'Thanh'}
-        selectedItem={selectedItem}
-        onCheck={handleSelect}
-      />
-      <StyledCheckBox
-        id={'Hung'}
-        selectedItem={selectedItem}
-        onCheck={handleSelect}
-      />
-      <StyledCheckBox
-        id={'Cuong'}
         selectedItem={selectedItem}
         onCheck={handleSelect}
       />
